@@ -7,17 +7,18 @@ public class test {
 		PrintStream ps = new PrintStream(System.out, true, "UTF-8");
 		List<String> count = new ArrayList<>();
 		ArrayList<String> key = new ArrayList<>();
-		String input = sc.nextLine();
+		
 		while (input.equals("") == false) {
+			String input = sc.nextLine();
 			key.add(input);
-			HashSet<String> cookies = new HashSet<>(key);
-			count = new ArrayList<>(cookies);
-			Collections.sort(count);
-			input = sc.nextLine();
-		}	
-			for (String k:count) {
-				ps.println(k + " " + Collections.frequency(key,k));
-			}
+		}
+		HashSet<String> cookies = new HashSet<>(key);
+		count = new ArrayList<>(cookies);
+		Collections.sort(count);
+	
+		for (String k:count) {
+			ps.println(k + " " + Collections.frequency(key,k));
+		}
 		
 	}
 
