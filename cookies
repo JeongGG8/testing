@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class test {
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		Scanner sc = new Scanner(System.in,"UTF-8");
+		PrintStream ps = new PrintStream(System.out, true, "UTF-8");
+		List<String> count = new ArrayList<>();
+		ArrayList<String> key = new ArrayList<>();
+		String input = sc.nextLine();
+		while (input.equals("") == false) {
+			key.add(input);
+			HashSet<String> cookies = new HashSet<>(key);
+			count = new ArrayList<>(cookies);
+			Collections.sort(count);
+			input = sc.nextLine();
+		}	
+			for (String k:count) {
+				ps.println(k + " " + Collections.frequency(key,k));
+			}
+		
+	}
+
+}
