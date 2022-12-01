@@ -1,0 +1,44 @@
+import java.awt.*;
+import javax.swing.*;
+import java.util.*;
+
+public class clock extends JFrame {
+	clock()	{
+		setTitle("시계");
+		
+		setLayout(new BorderLayout(10,10));
+		showNorth();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(300,100);
+		setVisible(true);
+		
+	}
+	
+	void showNorth() {
+		JTextField time;
+		JButton start;
+		JButton stop;
+		String now = "";
+				
+		Calendar c = Calendar.getInstance();
+		int hour = c.get(Calendar.HOUR_OF_DAY);
+		int minute = c.get(Calendar.MINUTE);
+		int second = c.get(Calendar.SECOND);
+		if (hour < 12) {
+			now =  "오전" + hour + ":" + minute + ":" + second;
+		}
+		else {
+			hour = hour - 12;
+			now = "오후" + hour + ":" + minute + ":" + second;
+		}
+		time.setText(now);
+
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		clock();
+	}
+
+}
